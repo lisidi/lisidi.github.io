@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lisidi.github.io//favicon.ico?v=1617871224785">
+<link rel="shortcut icon" href="https://lisidi.github.io//favicon.ico?v=1617948157496">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://lisidi.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://lisidi.github.io/">
-        <img class="avatar" src="https://lisidi.github.io//images/avatar.png?v=1617871224785" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://lisidi.github.io//images/avatar.png?v=1617948157496" alt="" width="32px" height="32px">
       </a>
       <a href="https://lisidi.github.io/">
         <h1 class="site-title">sidi记录的点滴</h1>
@@ -96,7 +96,18 @@
             
           </div>
           <div class="post-content">
-            
+            <ul>
+<li>FFmpeg parse到的extra data中分离vps, sps, pps等关键信息</li>
+<li>CMVideoFormatDescriptionCreateFromH264ParameterSets,CMVideoFormatDescriptionCreateFromHEVCParameterSets装载vps,sps,pps等NALU header信息</li>
+<li>指定解码器回调函数与解码后视频数据类型(yuv,RGB…)</li>
+<li>创建解码器VTDecompressionSessionCreate</li>
+<li>生成CMBlockBufferRef装载解码前数据,再将其转为CMSampleBufferRef以提供给解码器.</li>
+<li>开始解码VTDecompressionSessionDecodeFrame</li>
+<li>在回调函数中CVImageBufferRef即为解码后的数据,可转为CMSampleBufferRef传出.</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://lisidi.github.io//post-images/1617938401486.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://lisidi.github.io//post-images/1617938480794.png" alt="" loading="lazy"></figure>
+
           </div>
         </div>
 
